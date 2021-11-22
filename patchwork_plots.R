@@ -18,6 +18,16 @@ p4 <- ggplot(mtcars) + geom_bar(aes(carb))
 
 p1 + inset_element(p2, left = 0.6, bottom = 0.6, right = 1, top = 1)
 
+
+# text layout -------------------------------------------------------------
+
+layout <- "
+AA#B
+C#DD
+"
+
+p1 + p2 + p3 + p4 + plot_layout(design = layout)
+
 # style it up -------------------------------------------------------------
 
 patchwork <- (p1 + p2) / p3
