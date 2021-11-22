@@ -86,3 +86,38 @@ library(furrr)
 plan(sequential)
 future_map_chr(1:3, ~str_c("I count ", . , "! Ha ha ha!"))
 
+
+
+# for loops ---------------------------------------------------------------
+
+
+# random data creation function
+newData <- function() {
+  tibble(
+    a = rnorm(10),
+    b = rnorm(10),
+    c = rnorm(10),
+    d = rnorm(10)
+  )
+}
+
+# If we want to calculate the median for each column we could do
+# it in multiple ways
+
+# Four steps
+(df <- newData())
+median(df$a)
+median(df$b)
+median(df$c)
+median(df$d)
+
+# This seems bulky. Let's use a for-loop instead
+
+output <- vector("double", ncol(df))  # 1. output
+for (i in seq_along(df)) {            # 2. sequence
+  output[[i]] <- median(df[[i]])      # 3. body
+}
+
+# purrr
+
+map_dbl(df, median)
