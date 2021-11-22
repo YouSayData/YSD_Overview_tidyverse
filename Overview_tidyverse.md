@@ -7,7 +7,7 @@ autosize: true
 
 
 
-To Whom It May Concern
+The talk's audience
 ========================================================
 type: sub-section
 
@@ -15,15 +15,15 @@ type: sub-section
 
 2. Former R-users
 
-3. Novel R-users
+3. Novice R-users
 
 What is the tidyverse?
 ========================================================
 type: section
 
-- The `tidyverse` is an opinionated framework for working with data in R.
+- The `tidyverse` is an opinionated framework for working with data in R
 
-- Designed for Data Science
+- Designed for data science
 
 - It is a collection of libraries
 
@@ -36,7 +36,7 @@ source: readability.R
 
 - Convenience
 
-1. Core Libraries
+1. Core libraries
 ========================================================
 type: section
 
@@ -100,7 +100,7 @@ Error in match.fun(FUN) :
 
 - Negative: `apply` often faster 
 
-2. tidyverse includes: Additional Import Libraries
+2. tidyverse includes: additional import libraries
 ========================================================
 type: section
 
@@ -124,7 +124,7 @@ source: dbi_example.R
 
 It just works.
 
-3. tidyverse includes: Additional Wrangle and Programming Libraries
+3. tidyverse includes: additional wrangle and programming libraries
 ========================================================
 type: section
 
@@ -139,7 +139,7 @@ library(glue)
 library(magritter)
 ```
 
-3.1. Kommienezuspadt or working with time and dates
+3.1. Working with time and dates
 ========================================================
 source: dates.R
 
@@ -147,7 +147,7 @@ source: dates.R
 2. Does every day have 24 hours?
 3. What is 9am?
 
-4. tidyverse Satellites 
+4. tidyverse satellites 
 ========================================================
 type: section
 
