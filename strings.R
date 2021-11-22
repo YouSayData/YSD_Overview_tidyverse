@@ -13,7 +13,7 @@ grep("l", helloWorld)
 grepl("l", helloWorld)
 
 nchar(helloWorld)
-paste0(helloWorld, collapse = ",")
+paste(helloWorld, collapse = ",")
 
 # tidyverse ---------------------------------------------------------------
 

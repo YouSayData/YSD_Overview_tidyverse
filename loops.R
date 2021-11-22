@@ -4,7 +4,6 @@
 library(purrr)
 library(repurrrsive)
 
-
 # lapply vs map ------------------------------------------------------------------
 
 old <- lapply(got_chars[1:3],
