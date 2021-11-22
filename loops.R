@@ -118,6 +118,12 @@ for (i in seq_along(df)) {            # 2. sequence
   output[[i]] <- median(df[[i]])      # 3. body
 }
 
+# if you interested in the side-effect and not want to generate an output
+for (i in seq_along(df)) {            # 2. sequence
+  print(df[[i]])      # 3. body
+}
+
 # purrr
 
 map_dbl(df, median)
+walk(df, print)
