@@ -4,7 +4,7 @@
 library(tidyverse)
 
 
-# 1. names.glue parameter ----------------------------------------------------
+# 1. names_glue parameter ----------------------------------------------------
 
 (storms_sum <- storms %>% 
   filter(year %in% 1975:1977) %>% 

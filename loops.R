@@ -19,7 +19,7 @@ map(1:2, rnorm)
 
 lapply(1:2, function(x) rnorm(1, mean = x))
 
-# R 4.1
+# R >=4.1
 # lapply(1:2, \(x) rnorm(1, mean = x))
 
 map(1:2, ~rnorm(1, mean = .))
@@ -82,14 +82,32 @@ map_dfr(got_chars[16:18],
 # furrr & purrr ----------------------------------------------------------------
 
 library(furrr)
+library(tictoc)
 
-plan(sequential)
-future_map_chr(1:3, ~str_c("I count ", . , "! Ha ha ha!"))
+count_target <- 1000000
+
+{
+  tic()
+  plan(sequential)
+  the_count <- future_map_chr(1:count_target, ~str_c("I count ", . , "! Ha ha ha!"))
+  toc()
+}
+
+{
+  tic()
+  the_count <- map_chr(1:count_target, ~str_c("I count ", . , "! Ha ha ha!"))
+  toc()
+}
+
+{
+  tic()
+  plan(multisession)
+  the_count <- future_map_chr(1:count_target, ~str_c("I count ", . , "! Ha ha ha!"))
+  toc()
+}
 
 
-
-# for loops ---------------------------------------------------------------
-
+# replacing for loops with purrr ------------------------------------------
 
 # random data creation function
 newData <- function() {

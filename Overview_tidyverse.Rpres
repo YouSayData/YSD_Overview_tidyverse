@@ -88,6 +88,8 @@ source: readability.R
 
 - Convenience
 
+- Consistency
+
 1. Core libraries
 ========================================================
 type: section
@@ -225,9 +227,7 @@ title: false
 
 # Ngā mihi nui!
 
-## Special offer
-
-If you book a one-on-one session at [https://yousaydata.com](https://yousaydata.com), use the code __YOUSAYR__ to get 35% off.
+Feel free to book a one-on-one session at [https://yousaydata.com](https://yousaydata.com) or get in touch on [LinkedIn: Thomas Koentges](https://www.linkedin.com/in/thomas-koentges/).
 
 
 

@@ -70,3 +70,6 @@ as.duration(t_age)
 
 next_year <- today() + years(1)
 (today() %--% next_year) / days(1)
+
+year_after_next_year <- today() + years(2)
+(today() %--% year_after_next_year) / days(1)
