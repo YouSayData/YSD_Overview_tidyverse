@@ -14,8 +14,8 @@ julia <- julia_setup()
 
 generate_toy_data <- function(n) {
   map(1:n, function(x) {
-    result <- rnorm(n = 1000)
-    names(result)  <-  str_c("DIM_", formatC(1:1000, width = 4, flag = 0))
+    result <- rnorm(n = 89)
+    names(result)  <-  str_c("DIM_", formatC(1:89, width = 4, flag = 0))
     result
   }
   ) %>% bind_rows
@@ -42,9 +42,9 @@ measure_sim_mat_julia <- function(tibble_1, tibble_2) {
 
 {
 tic()
-measure_sim_mat_julia(
-  generate_toy_data(1),
-  generate_toy_data(1000)
+results <- measure_sim_mat_julia(
+  generate_toy_data(100),
+  generate_toy_data(55000)
   )
 toc()
 }

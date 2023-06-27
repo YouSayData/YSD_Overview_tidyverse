@@ -25,6 +25,7 @@ flights %>%
 
 # add-on ------------------------------------------------------------------
 # base R has a pipe now too -----------------------------------------------
+# Introduced in 4.1.0 and further functionality added in 4.2.0 and 4.3.0
 
 flights |>
   filter(year == 2013,
@@ -45,15 +46,15 @@ mtcars %>%
   lm(mpg ~ hp, data = .)
 
 mtcars |>
-  lm(mpg ~ hp, data = .)
-
-mtcars |>
   lm(mpg ~ hp, data = _)
 
-mtcars %>%
-  glimpse
+mtcars %>% .$cyl
+mtcars |> _$cyl
 
-mtcars |>
+10 %>% rnorm(3, .)
+10 |> rnorm(3, mean = _)
+
+mtcars %>%
   glimpse
 
 mtcars |>

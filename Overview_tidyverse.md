@@ -7,10 +7,10 @@
     height: 100px;
 }
 </style>
-tidyverse: Key Tips and Libraries for Existing R Users
+tidyverse and beyond: Key Tips and Libraries for Existing R Users
 ========================================================
 author: Dr. Thomas Koentges, You Say Data Limited
-date: 23 Nov 2021
+date: 28 Jun 2023
 font-family: 'Montserrat'
 autosize: true
 
@@ -99,7 +99,7 @@ library(tidyverse)
 
 
 ```
-ggplot2, dplyr, tidyr, readr, purrr, tibble, stringr, forcats
+ggplot2, dplyr, tidyr, readr, purrr, tibble, stringr, forcats, lubridate
 ```
 
 1.1. baseR vs. stringr

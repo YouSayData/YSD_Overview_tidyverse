@@ -69,3 +69,5 @@ tailnum_delay
 nrow(tailnum_delay_db)
 tail(tailnum_delay_db)
 
+head(tailnum_delay_db)
+

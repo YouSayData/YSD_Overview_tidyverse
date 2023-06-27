@@ -6,6 +6,7 @@ library(repurrrsive)
 
 # lapply vs map ------------------------------------------------------------------
 
+got_chars[[1]]
 old <- lapply(got_chars[1:3],
        function(x) x[["name"]])
 
@@ -18,12 +19,10 @@ lapply(1:2, rnorm)
 map(1:2, rnorm)
 
 lapply(1:2, function(x) rnorm(1, mean = x))
+map(1:2, ~rnorm(1, mean = .))
 
 # R >=4.1
 # lapply(1:2, \(x) rnorm(1, mean = x))
-
-map(1:2, ~rnorm(1, mean = .))
-
 
 # sapply ------------------------------------------------------------------
 
@@ -41,7 +40,6 @@ vapply(got_chars[1:3],
 
 map_chr(got_chars[1:3], "name")
 
-
 # map_dfr -----------------------------------------------------------------
 
 # base
@@ -55,7 +53,6 @@ as.data.frame(mat, stringsAsFactors = FALSE)
 
 map_dfr(got_chars[23:25],
         `[`, c("name", "playedBy"))
-
 
 # mapply vs map2 pmap ---------------------------------------------------------
 
@@ -84,7 +81,7 @@ map_dfr(got_chars[16:18],
 library(furrr)
 library(tictoc)
 
-count_target <- 1000000
+count_target <- 250000
 
 {
   tic()
@@ -101,11 +98,12 @@ count_target <- 1000000
 
 {
   tic()
-  plan(multisession)
+  plan(multisession, workers = 7)
   the_count <- future_map_chr(1:count_target, ~str_c("I count ", . , "! Ha ha ha!"))
   toc()
 }
 
+plan(sequential)
 
 # replacing for loops with purrr ------------------------------------------
 
@@ -135,13 +133,14 @@ output <- vector("double", ncol(df))  # 1. output
 for (i in seq_along(df)) {            # 2. sequence
   output[[i]] <- median(df[[i]])      # 3. body
 }
+output
 
 # if you interested in the side-effect and not want to generate an output
 for (i in seq_along(df)) {            # 2. sequence
-  print(df[[i]])      # 3. body
+  print(median(df[[i]]))      # 3. body
 }
 
 # purrr
 
 map_dbl(df, median)
-walk(df, print)
+walk(df, ~print(median(.)))

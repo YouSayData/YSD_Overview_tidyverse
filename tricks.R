@@ -17,10 +17,10 @@ storms_sum %>%
   pivot_wider(names_from = "year", 
               values_from = c("mean", "median"))
 
-wide_storms <- storms_sum %>% 
+(wide_storms <- storms_sum %>% 
   pivot_wider(names_from = "year", 
               values_from = c("mean", "median"), 
-              names_glue = "{.value}_of_{year}")
+              names_glue = "{.value}_of_{year}"))
 
 
 # 2. Custom break pivot_longer ---------------------------------------------
@@ -34,6 +34,7 @@ wide_storms %>%
 
 
 # 3. summarise multiple columns with multiple functions ----------------------
+colnames(mtcars)
 
 mtcars %>% 
   group_by(cyl) %>% 
